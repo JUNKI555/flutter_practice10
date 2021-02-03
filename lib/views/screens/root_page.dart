@@ -237,7 +237,7 @@ class _RootPageState extends State<RootPage> {
                   },
                 ),
                 Align(
-                  alignment: Alignment.bottomCenter,
+                  alignment: const Alignment(0, 0.25),
                   child: Padding(
                     padding: const EdgeInsets.only(bottom: 20),
                     child: AnimatedOpacity(
@@ -257,7 +257,7 @@ class _RootPageState extends State<RootPage> {
                   ),
                 ),
                 Align(
-                  alignment: Alignment.bottomCenter,
+                  alignment: const Alignment(0, 0.25),
                   child: Padding(
                     padding: const EdgeInsets.only(bottom: 20),
                     child: AnimatedOpacity(

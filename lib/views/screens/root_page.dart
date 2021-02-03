@@ -227,6 +227,9 @@ class _RootPageState extends State<RootPage> {
             child: Stack(
               children: <Widget>[
                 PageView(
+                  scrollDirection: Axis.horizontal,
+                  controller: pageController,
+                  children: pageList,
                   onPageChanged: (pageCount) {
                     pageNumberChange(pageCount);
                     if (pageCount + 1 == pageList.length) {
@@ -235,8 +238,6 @@ class _RootPageState extends State<RootPage> {
                       isFinalPage = true;
                     }
                   },
-                  controller: pageController,
-                  children: pageList,
                 ),
                 Align(
                   alignment: Alignment.bottomCenter,

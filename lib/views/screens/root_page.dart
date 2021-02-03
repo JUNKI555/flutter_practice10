@@ -33,22 +33,19 @@ class _RootPageState extends State<RootPage> {
     final pageList = <Widget>[
       Column(
         children: <Widget>[
-          Container(
+          const SizedBox(
             height: 150,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                const Text(
-                  'アプリの説明1アプリの説明1',
-                  style: TextStyle(
-                    fontSize: 24,
-                    color: Colors.black54,
-                  ),
+            child: Center(
+              child: Text(
+                'アプリの説明1アプリの説明1',
+                style: TextStyle(
+                  fontSize: 24,
+                  color: Colors.black54,
                 ),
-              ],
+              ),
             ),
           ),
-          Container(
+          SizedBox(
             width: 300,
             height: 300,
             child: Column(
@@ -79,7 +76,7 @@ class _RootPageState extends State<RootPage> {
       ),
       Column(
         children: <Widget>[
-          Container(
+          SizedBox(
             height: 150,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -94,7 +91,7 @@ class _RootPageState extends State<RootPage> {
               ],
             ),
           ),
-          Container(
+          SizedBox(
             width: 300,
             height: 300,
             child: Column(
@@ -125,7 +122,7 @@ class _RootPageState extends State<RootPage> {
       ),
       Column(
         children: <Widget>[
-          Container(
+          SizedBox(
             height: 150,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -140,7 +137,7 @@ class _RootPageState extends State<RootPage> {
               ],
             ),
           ),
-          Container(
+          SizedBox(
             width: 300,
             height: 300,
             child: Column(
@@ -171,7 +168,7 @@ class _RootPageState extends State<RootPage> {
       ),
       Column(
         children: <Widget>[
-          Container(
+          SizedBox(
             height: 150,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -186,7 +183,7 @@ class _RootPageState extends State<RootPage> {
               ],
             ),
           ),
-          Container(
+          SizedBox(
             width: 300,
             height: 300,
             child: Column(

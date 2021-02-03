@@ -224,74 +224,75 @@ class _RootPageState extends State<RootPage> {
       body: Column(
         children: <Widget>[
           Expanded(
-              child: Stack(
-            children: <Widget>[
-              PageView(
-                onPageChanged: (pageCount) {
-                  pageNumberChange(pageCount);
-                  if (pageCount + 1 == pageList.length) {
-                    isFinalPage = false;
-                  } else {
-                    isFinalPage = true;
-                  }
-                },
-                controller: pageController,
-                children: pageList,
-              ),
-              Align(
-                alignment: Alignment.bottomCenter,
-                child: Padding(
-                  padding: const EdgeInsets.only(bottom: 20),
-                  child: AnimatedOpacity(
-                    opacity: isFinalPage ? 1.0 : 0.0,
-                    duration: const Duration(microseconds: 500),
-                    child: PageIndicator(
-                      layout: PageIndicatorLayout.NONE,
-                      size: 20,
-                      activeSize: 30,
-                      controller: pageController,
-                      space: 20,
-                      count: 4,
-                      color: Colors.black,
-                      activeColor: Colors.red,
+            child: Stack(
+              children: <Widget>[
+                PageView(
+                  onPageChanged: (pageCount) {
+                    pageNumberChange(pageCount);
+                    if (pageCount + 1 == pageList.length) {
+                      isFinalPage = false;
+                    } else {
+                      isFinalPage = true;
+                    }
+                  },
+                  controller: pageController,
+                  children: pageList,
+                ),
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Padding(
+                    padding: const EdgeInsets.only(bottom: 20),
+                    child: AnimatedOpacity(
+                      opacity: isFinalPage ? 1.0 : 0.0,
+                      duration: const Duration(microseconds: 500),
+                      child: PageIndicator(
+                        layout: PageIndicatorLayout.NONE,
+                        size: 20,
+                        activeSize: 30,
+                        controller: pageController,
+                        space: 20,
+                        count: 4,
+                        color: Colors.black,
+                        activeColor: Colors.red,
+                      ),
                     ),
                   ),
                 ),
-              ),
-              Align(
-                alignment: Alignment.bottomCenter,
-                child: Padding(
-                  padding: const EdgeInsets.only(bottom: 20),
-                  child: AnimatedOpacity(
-                    opacity: isFinalPage ? 0.0 : 1.0,
-                    duration: const Duration(microseconds: 500),
-                    child: SizedBox(
-                      width: 300,
-                      height: 50,
-                      child: RaisedButton(
-                        color: Colors.blue,
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/hello');
-                        },
-                        shape: const RoundedRectangleBorder(
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(5),
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Padding(
+                    padding: const EdgeInsets.only(bottom: 20),
+                    child: AnimatedOpacity(
+                      opacity: isFinalPage ? 0.0 : 1.0,
+                      duration: const Duration(microseconds: 500),
+                      child: SizedBox(
+                        width: 300,
+                        height: 50,
+                        child: RaisedButton(
+                          color: Colors.blue,
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/hello');
+                          },
+                          shape: const RoundedRectangleBorder(
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(5),
+                            ),
                           ),
-                        ),
-                        child: const Text(
-                          'はじめる',
-                          style: TextStyle(
-                            fontSize: 20,
-                            color: Colors.white,
+                          child: const Text(
+                            'はじめる',
+                            style: TextStyle(
+                              fontSize: 20,
+                              color: Colors.white,
+                            ),
                           ),
                         ),
                       ),
                     ),
                   ),
                 ),
-              ),
-            ],
-          ))
+              ],
+            ),
+          ),
         ],
       ),
     );

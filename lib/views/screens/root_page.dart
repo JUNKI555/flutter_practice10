@@ -219,8 +219,11 @@ class _RootPageState extends State<RootPage> {
         title: const Text('アプリ説明'),
       ),
       body: Column(
+        /* Expanded は Column, Row, Flex のいずれかにラップされなければならない */
         children: <Widget>[
+          /* PageViewの切り替え制御を全画面で行うためにExpanded */
           Expanded(
+            /* 全画面のPageView, その上にPageIndicator(と最終ページのボタン)を重ねるためにStack */
             child: Stack(
               children: <Widget>[
                 PageView(
@@ -238,50 +241,44 @@ class _RootPageState extends State<RootPage> {
                 ),
                 Align(
                   alignment: const Alignment(0, 0.25),
-                  child: Padding(
-                    padding: const EdgeInsets.only(bottom: 20),
-                    child: AnimatedOpacity(
-                      opacity: isFinalPage ? 1.0 : 0.0,
-                      duration: const Duration(microseconds: 500),
-                      child: PageIndicator(
-                        layout: PageIndicatorLayout.NONE,
-                        size: 20,
-                        activeSize: 30,
-                        controller: pageController,
-                        space: 20,
-                        count: 4,
-                        color: Colors.black,
-                        activeColor: Colors.red,
-                      ),
+                  child: AnimatedOpacity(
+                    opacity: isFinalPage ? 1.0 : 0.0,
+                    duration: const Duration(microseconds: 500),
+                    child: PageIndicator(
+                      layout: PageIndicatorLayout.NONE,
+                      size: 20,
+                      activeSize: 30,
+                      controller: pageController,
+                      space: 20,
+                      count: 4,
+                      color: Colors.black,
+                      activeColor: Colors.red,
                     ),
                   ),
                 ),
                 Align(
                   alignment: const Alignment(0, 0.25),
-                  child: Padding(
-                    padding: const EdgeInsets.only(bottom: 20),
-                    child: AnimatedOpacity(
-                      opacity: isFinalPage ? 0.0 : 1.0,
-                      duration: const Duration(microseconds: 500),
-                      child: SizedBox(
-                        width: 300,
-                        height: 50,
-                        child: RaisedButton(
-                          color: Colors.blue,
-                          onPressed: () {
-                            Navigator.pushNamed(context, '/hello');
-                          },
-                          shape: const RoundedRectangleBorder(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(5),
-                            ),
+                  child: AnimatedOpacity(
+                    opacity: isFinalPage ? 0.0 : 1.0,
+                    duration: const Duration(microseconds: 500),
+                    child: SizedBox(
+                      width: 300,
+                      height: 50,
+                      child: RaisedButton(
+                        color: Colors.blue,
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/hello');
+                        },
+                        shape: const RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(5),
                           ),
-                          child: const Text(
-                            'はじめる',
-                            style: TextStyle(
-                              fontSize: 20,
-                              color: Colors.white,
-                            ),
+                        ),
+                        child: const Text(
+                          'はじめる',
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.white,
                           ),
                         ),
                       ),

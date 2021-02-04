@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_page_indicator/flutter_page_indicator.dart';
+import '../widgets/instruction_widget.dart';
 
 class RootPage extends StatefulWidget {
   @override
@@ -31,186 +32,29 @@ class _RootPageState extends State<RootPage> {
   @override
   Widget build(BuildContext context) {
     final pageList = <Widget>[
-      Column(
-        children: <Widget>[
-          const SizedBox(
-            height: 150,
-            child: Center(
-              child: Text(
-                'アプリの説明1アプリの説明1',
-                style: TextStyle(
-                  fontSize: 24,
-                  color: Colors.black54,
-                ),
-              ),
-            ),
-          ),
-          SizedBox(
-            width: 300,
-            height: 300,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                SizedBox(
-                  width: 300,
-                  height: 200,
-                  child: FlatButton(
-                    color: Colors.black54,
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/test');
-                    },
-                    child: const Text('1枚目'),
-                  ),
-                ),
-                const Text(
-                  'アプリの説明1アプリの説明1アプリの説明1アプリの説明1',
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: Colors.black54,
-                  ),
-                )
-              ],
-            ),
-          ),
-        ],
+      Instruction(
+        context,
+        'アプリの説明1アプリの説明1',
+        '1枚目',
+        'アプリの説明1アプリの説明1アプリの説明1アプリの説明1',
       ),
-      Column(
-        children: <Widget>[
-          SizedBox(
-            height: 150,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                const Text(
-                  'アプリの説明2アプリの説明2',
-                  style: TextStyle(
-                    fontSize: 24,
-                    color: Colors.black54,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          SizedBox(
-            width: 300,
-            height: 300,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                SizedBox(
-                  width: 300,
-                  height: 200,
-                  child: FlatButton(
-                    color: Colors.black54,
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/test');
-                    },
-                    child: const Text('2枚目'),
-                  ),
-                ),
-                const Text(
-                  'アプリの説明2アプリの説明2アプリの説明2アプリの説明2',
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: Colors.black54,
-                  ),
-                )
-              ],
-            ),
-          ),
-        ],
+      Instruction(
+        context,
+        'アプリの説明2アプリの説明2',
+        '2枚目',
+        'アプリの説明2アプリの説明2アプリの説明2アプリの説明2',
       ),
-      Column(
-        children: <Widget>[
-          SizedBox(
-            height: 150,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                const Text(
-                  'アプリの説明3アプリの説明3',
-                  style: TextStyle(
-                    fontSize: 24,
-                    color: Colors.black54,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          SizedBox(
-            width: 300,
-            height: 300,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                SizedBox(
-                  width: 300,
-                  height: 200,
-                  child: FlatButton(
-                    color: Colors.black54,
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/test');
-                    },
-                    child: const Text('3枚目'),
-                  ),
-                ),
-                const Text(
-                  'アプリの説明3アプリの説明3アプリの説明3アプリの説明3',
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: Colors.black54,
-                  ),
-                )
-              ],
-            ),
-          ),
-        ],
+      Instruction(
+        context,
+        'アプリの説明3アプリの説明3',
+        '3枚目',
+        'アプリの説明3アプリの説明3アプリの説明3アプリの説明3',
       ),
-      Column(
-        children: <Widget>[
-          SizedBox(
-            height: 150,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text(
-                  'アプリの説明4アプリの説明4',
-                  style: TextStyle(
-                    fontSize: 24,
-                    color: Colors.black54,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          SizedBox(
-            width: 300,
-            height: 300,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                SizedBox(
-                  width: 300,
-                  height: 200,
-                  child: FlatButton(
-                    color: Colors.black54,
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/test');
-                    },
-                    child: const Text('4枚目'),
-                  ),
-                ),
-                const Text(
-                  'アプリの説明4アプリの説明4アプリの説明4アプリの説明4',
-                  style: TextStyle(
-                    fontSize: 14,
-                    color: Colors.black54,
-                  ),
-                )
-              ],
-            ),
-          ),
-        ],
+      Instruction(
+        context,
+        'アプリの説明4アプリの説明4',
+        '4枚目',
+        'アプリの説明4アプリの説明4アプリの説明4アプリの説明4',
       ),
     ];
 

@@ -9,12 +9,15 @@ class RootPage extends StatefulWidget {
 
 class _RootPageState extends State<RootPage> {
   PageController pageController;
-  bool isFinalPage = true;
-  int pageCount = 1;
+  bool isFinalPage = false;
 
-  void pageNumberChange(int page) {
+  void changePageNumber(int page, int pageLength) {
     setState(() {
-      pageCount = page + 1;
+      if (page + 1 == pageLength) {
+        isFinalPage = true;
+      } else {
+        isFinalPage = false;
+      }
     });
   }
 
@@ -75,18 +78,13 @@ class _RootPageState extends State<RootPage> {
                   controller: pageController,
                   children: pageList,
                   onPageChanged: (pageCount) {
-                    pageNumberChange(pageCount);
-                    if (pageCount + 1 == pageList.length) {
-                      isFinalPage = false;
-                    } else {
-                      isFinalPage = true;
-                    }
+                    changePageNumber(pageCount, pageList.length);
                   },
                 ),
                 Align(
                   alignment: const Alignment(0, 0.25),
                   child: AnimatedOpacity(
-                    opacity: isFinalPage ? 1.0 : 0.0,
+                    opacity: isFinalPage ? 0.0 : 1.0,
                     duration: const Duration(microseconds: 500),
                     child: PageIndicator(
                       layout: PageIndicatorLayout.NONE,
@@ -103,7 +101,7 @@ class _RootPageState extends State<RootPage> {
                 Align(
                   alignment: const Alignment(0, 0.25),
                   child: AnimatedOpacity(
-                    opacity: isFinalPage ? 0.0 : 1.0,
+                    opacity: isFinalPage ? 1.0 : 0.0,
                     duration: const Duration(microseconds: 500),
                     child: SizedBox(
                       width: 300,

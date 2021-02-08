@@ -109,7 +109,7 @@ class _StatefulInstructionPage extends State<StatefulInstructionPage> {
                       child: RaisedButton(
                         color: Colors.blue,
                         onPressed: () {
-                          Navigator.pushNamed(context, '/hello');
+                          Navigator.of(context).pop();
                         },
                         shape: const RoundedRectangleBorder(
                           borderRadius: BorderRadius.all(

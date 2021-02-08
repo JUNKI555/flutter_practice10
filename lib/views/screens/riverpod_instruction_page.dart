@@ -93,7 +93,7 @@ class RiverpodInstructionPage extends StatelessWidget {
                           child: RaisedButton(
                             color: Colors.blue,
                             onPressed: () {
-                              Navigator.pushNamed(context, '/hello');
+                              Navigator.of(context).pop();
                             },
                             shape: const RoundedRectangleBorder(
                               borderRadius: BorderRadius.all(

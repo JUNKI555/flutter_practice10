@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_page_indicator/flutter_page_indicator.dart';
 import '../widgets/instruction_widget.dart';
 
-class RootPage extends StatefulWidget {
+class StatefulInstructionPage extends StatefulWidget {
   @override
-  _RootPageState createState() => _RootPageState();
+  _StatefulInstructionPage createState() => _StatefulInstructionPage();
 }
 
-class _RootPageState extends State<RootPage> {
+class _StatefulInstructionPage extends State<StatefulInstructionPage> {
   PageController pageController;
   bool isFinalPage = false;
 
@@ -28,7 +28,7 @@ class _RootPageState extends State<RootPage> {
   }
 
   @override
-  void didUpdateWidget(RootPage oldWidget) {
+  void didUpdateWidget(StatefulInstructionPage oldWidget) {
     super.didUpdateWidget(oldWidget);
   }
 

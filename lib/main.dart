@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_practice10/views/screens/root_page.dart';
+import 'package:flutter_practice10/views/screens/stateful_instruction_page.dart';
 import 'package:flutter_practice10/views/screens/riverpod_instruction_page.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
